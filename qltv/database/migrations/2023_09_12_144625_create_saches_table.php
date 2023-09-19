@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('ten_sach'); 
             $table->unsignedInteger('id_tacgia');
             $table->unsignedInteger('id_theloai');
+            $table->boolean('trang_thai');
             $table->foreign('id_tacgia')->references('id_tacgia')->on('tacgias')->onDelete('cascade');
             $table->foreign('id_theloai')->references('id_theloai')->on('theloais')->onDelete('cascade');
         });
