@@ -84,6 +84,6 @@ class SachController extends Controller
 
         $sach->delete();
 
-        return redirect()->route('sachs.index')->with('success', 'Xóa sách thành công.');
+        return redirect()->route('sachs.index')->with('success', 'Xóa thành công.');
     }
 }

@@ -81,7 +81,7 @@
                     </tr>
                 @endif
             </table>
-            
+            {!! $sachs->render('pagination::bootstrap-5') !!}
         </div>
     </div>
 

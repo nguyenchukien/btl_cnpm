@@ -14,6 +14,7 @@ use App\Http\Controllers\SachController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 Route::resource('/sachs', SachController::class);
+

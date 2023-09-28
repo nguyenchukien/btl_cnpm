@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('ten_sach',); 
             $table->string('ten_tacgia'); 
             $table->string('the_loai'); 
-            $table->softDeletes();
+            
     });
     }
     
