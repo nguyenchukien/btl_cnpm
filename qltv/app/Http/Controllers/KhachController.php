@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Khach;
+
 use Illuminate\Http\Request;
 
 class KhachController extends Controller
@@ -11,7 +13,9 @@ class KhachController extends Controller
      */
     public function index()
     {
-        //
+        $khachs = Khach::orderByDesc('id_khach')->paginate(5);
+        return view('bandoc.index', compact('khachs'))->with('i', (request()->input('page', 1) - 1) * 5);
+
     }
 
     /**
@@ -19,7 +23,7 @@ class KhachController extends Controller
      */
     public function create()
     {
-        //
+        return view('bandoc.create');
     }
 
     /**
@@ -27,7 +31,16 @@ class KhachController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $khach = new Khach();
+        $khach->id_khach = $request->input('id');
+        $khach->ten_khach = $request->input('ten');
+        $khach->gioi_tinh = $request->input('gioitinh');
+        $khach->namsinh = $request->input('namsinh');
+        $khach->diachi = $request->input('diachi');
+        $khach->sdt = $request->input('sdt');
+        $khach->save();
+
+        return redirect()->route('khachs.index')->with('success', 'Bạn đọc được thêm thành công.');
     }
 
     /**
@@ -43,7 +56,9 @@ class KhachController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $khach = Khach::findOrFail($id);
+
+        return view('bandoc.edit', compact('khach'));
     }
 
     /**
@@ -51,7 +66,16 @@ class KhachController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $khach = Khach::findOrFail($id);
+        $khach->id_khach = $request->input('id');
+        $khach->ten_khach = $request->input('ten');
+        $khach->gioi_tinh = $request->input('gioitinh');
+        $khach->namsinh = $request->input('namsinh');
+        $khach->diachi = $request->input('diachi');
+        $khach->sdt = $request->input('sdt');
+        $khach->save();
+        return redirect()->route('khachs.index')->with('success', 'Thông tin bạn đoc được sửa thành công');
+
     }
 
     /**
@@ -59,6 +83,10 @@ class KhachController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $khach = Khach::findOrFail($id);
+
+        $khach->delete();
+
+        return redirect()->route('khachs.index')->with('success', 'Xóa thành công.');
     }
 }
