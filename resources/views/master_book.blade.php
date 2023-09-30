@@ -8,8 +8,13 @@
 </head>
 <body>
     <div class="container mt-5">
-
+        <head>
+            <form class="d-flex">
+                    <a class="btn btn-primary" href="index.php?controller=Member&action=logout" role="button">Đăng xuất</a>
+            </form>
+        </head>
         <h1 class="text-primary mt-3 mb-4 text-center"><b>Books management</b></h1>
+
 
         @yield('content')
 
