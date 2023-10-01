@@ -1,4 +1,4 @@
-@extends('master')
+@extends('bandoc.master')
 
 @section('content')
 
