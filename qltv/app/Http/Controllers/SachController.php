@@ -30,7 +30,6 @@ class SachController extends Controller
     public function store(Request $request)
     {
         $sach = new Sach();
-        $sach->id_sach = $request->input('id');
         $sach->ten_sach = $request->input('ten_sach');
         $sach->ten_tacgia = $request->input('ten_tacgia');
         $sach->the_loai = $request->input('the_loai');

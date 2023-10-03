@@ -29,16 +29,11 @@
         <div class="card-body">
             <form method="post" action="{{ route('khachs.store') }}">
                 @csrf
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-label-form">ID</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="id" class="form-control"/>
-                    </div>
-                </div>
+
                 <div class="row mb-3">
                     <label class="col-sm-2 col-label-form">Họ tên</label>
                     <div class="col-sm-10">
-                        <input type="text" name="ten" class="form-control"/>
+                        <input type="text" required name="ten" class="form-control"/>
                     </div>
                 </div>
                 <div class="row mb-3">
