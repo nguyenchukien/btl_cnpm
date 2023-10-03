@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Khach;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class KhachController extends Controller
@@ -31,6 +31,16 @@ class KhachController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+
         $khach = new Khach();
         $khach->id_khach = $request->input('id');
         $khach->ten_khach = $request->input('ten');
@@ -38,9 +48,16 @@ class KhachController extends Controller
         $khach->namsinh = $request->input('namsinh');
         $khach->diachi = $request->input('diachi');
         $khach->sdt = $request->input('sdt');
-        $khach->save();
 
-        return redirect()->route('khachs.index')->with('success', 'Bạn đọc được thêm thành công.');
+        if ($khach->save()) {
+            // Thêm dữ liệu thành công
+            return redirect()->route('success_route');
+        } else {
+            $khach->save();
+            // Xử lý khi thêm dữ liệu không thành công
+            return redirect()->route('khachs.index')->with('success', 'Bạn đọc được thêm thành công.');
+        }
+
     }
 
     /**

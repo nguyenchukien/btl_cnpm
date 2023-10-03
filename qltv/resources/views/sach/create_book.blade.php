@@ -30,6 +30,11 @@
         <form method="post" action="{{ route('sachs.store') }}">
             @csrf
             <div class="row mb-3">
+                <label class="col-sm-2 col-label-form">Id</label>
+                <div class="col-sm-10">
+                    <input type="text" name="id" class="form-control" />
+                </div>
+            <div class="row mb-3">
                 <label class="col-sm-2 col-label-form">Tên sách</label>
                 <div class="col-sm-10">
                     <input type="text" name="ten_sach" class="form-control" />
