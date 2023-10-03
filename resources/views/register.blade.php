@@ -1,7 +1,7 @@
 @extends('master1')
 
 @section('content')
-
+<div class="d-flex justify-content-center h-100">
 <style>
     *{
     margin:0;
@@ -32,7 +32,7 @@ section .noi-dung{
      display: flex;
      justify-content: center;
      align-items: center;
-     width: 80%;
+     width: 50%;
      height: 100%;
  }
 section .noi-dung .form{
@@ -43,7 +43,7 @@ section .noi-dung .form h2{
      font-weight: 500;
      font-size: 1.5em;
      text-transform: uppercase;
-     margin-bottom: 10px;
+     margin-bottom: 20px;
      border-bottom: 4px solid #ff4584;
      display: inline-block;
      letter-spacing: 1px;
@@ -130,58 +130,54 @@ section .noi-dung .form .icon-dang-nhap li{
  }
 
 </style>
-<div class="d-flex justify-content-center h-100">
 <body>
 <section>
-    
-    <div class="noi-dung">
-       
+     
+     <div class="noi-dung">
          <div class="form">
-            @if($message = Session::get('success'))
-
-                <div class="alert alert-success">
-                    {{ $message }}
-                </div>
-
-            @endif
-             <h2>LOGIN</h2>
-             <form action="{{route('authLogin')}}" method="post">
+             <h2>REGISTER</h2>
+             <form action="" method="post" enctype="multipart/form-data">
                 @csrf
+                @error('name')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <div class="input-form">
+                     <span>Name</span>
+                     <input type="text" name="name" required>
+                 </div>
+                 @error('email')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
                  <div class="input-form">
                      <span>Email</span>
-                     <input type="text" name="email">
+                     <input type="text" name="email" required>
                  </div>
+                 
                  <div class="input-form">
                      <span>Password</span>
-                     <input type="password" name="password">
+                     <input type="password" name="password" required>
                  </div>
-                 <div class="nho-dang-nhap">
-                     <label><input type="checkbox" name=""> Nhớ Đăng Nhập</label>
-                 </div>
-                 @if ($message = Session::get('error'))
-                    <div class="alert alert-danger" style="color: red;">
-                        {{ $message }}
-                    </div>
-                @endif
-
-                @if ($errors->any())
-                    <div class="alert alert-danger" style="color: red;">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                 @error('password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                 @error('password_confirmation')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
                  <div class="input-form">
-                     <input type="submit" value="Đăng Nhập">
+                     <span>Confirm Password</span>
+                     <input type="password" name="password_confirmation" required>
+                 </div>
+                
+                 <div class="input-form">
+                     <input type="submit" value="Đăng Ký">
                  </div>
                  <div class="input-form">
-                     <p>Bạn Chưa Có Tài Khoản? <a href="{{route('register.index')}}">Đăng Ký</a></p>
+                     <p>Bạn Đã Có Tài Khoản? <a href="{{route('login')}}">Đăng Nhập</a></p>
                  </div>
              </form>
          </div>
-     </div>   
+     </div>
+     <!--Kết Thúc Phần Nội Dung-->
  </section>
 </body>
 </div>

@@ -6,15 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Sach;
 class SachController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    // public function index()
-    // {
-    //     $sachs = Sach::orderByDesc('id_sach')->paginate(5);
-
-    //     return view('index', compact('sachs'))->with('i', (request()->input('page', 1) - 1) * 5);
-    // }
         
     public function index()
     {

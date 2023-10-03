@@ -20,7 +20,7 @@ class SachTableSeeder extends Seeder
             Sach::create([
                 'id_sach' => $i + 1,
                 'ten_sach' => $faker->sentence(3, true),
-                'ten_tacgia' => $faker->sentence(3, true),
+                'ten_tacgia' => $faker->sentence(2, true),
                 'the_loai' => $faker->sentence(3,true),
             ]);
         }

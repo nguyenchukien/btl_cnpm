@@ -11,12 +11,14 @@
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 bg-white rounded">
+        <img class="logo" src="{{ asset('img/anhsach.jpg') }}">
             <div class="container-fluid">                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <form method="post" action="#" class="d-flex" role="search">
