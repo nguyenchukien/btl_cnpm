@@ -9,14 +9,15 @@
 
         </div>
         <div class="card-body">
-            <form id="form_login"  method="post">
+            <form method="post" action="{{ route('auth.login') }}" id="form_login">
+                @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="txtUser" ><i class="fas fa-user"></i></span>
-                    <input id="username" type="text" class="form-control" placeholder="username" name ="txtUser" >
+                    <input id="username" type="text" class="form-control" placeholder="username" name ="txt_name" >
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="txtPass" ><i class="fas fa-key"></i></span>
-                    <input id="password" type="password" class="form-control" placeholder="password" name ="txtPass">
+                    <input id="password" type="password" class="form-control" placeholder="password" name ="txt_pass">
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Login" class="btn float-end login_btn" name ="btnLogin">

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SachController;
 use App\Http\Controllers\KhachController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +16,12 @@ use App\Http\Controllers\KhachController;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
+Route::get('/', [HomeController::class,'login'])->name('login');        //hiển thị giao diện
+Route::post('login', [HomeController::class,'authLogin'])->name('auth.login');      //sử lý dữ liệu khi nhấn submit trong login
+
+
+Route::middleware("auth")->prefix("admins")->group(function () {
+    Route::resource('sachs',SachController::class);
+
+    Route::resource('khachs', KhachController::class);
 });
-Route::resource('/sachs', SachController::class);
-Route::resource('/khachs', KhachController::class);

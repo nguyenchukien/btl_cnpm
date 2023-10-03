@@ -21,7 +21,7 @@
                 </li>
 
                 <form class="d-flex ms-auto">
-                    <a class="btn btn-primary" href="index.php?controller=Member&action=logout" role="button">Đăng xuất</a>
+                    <a class="btn btn-primary" href="{{ route('login') }}" role="button">Đăng xuất</a>
                 </form>
             </ul>
         </div>
