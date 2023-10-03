@@ -11,9 +11,9 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col col-md-6"><b>Product Data</b></div>
+                <div class="col col-md-6"><b>Thông tin bạn đọc</b></div>
                 <div class="col col-md-6">
-                    <a href="{{ route('khachs.create') }}" class="btn btn-success btn-sm float-end">Add</a>
+                    <a href="{{ route('khachs.create') }}" class="btn btn-success btn-sm float-end">Thêm</a>
                 </div>
             </div>
         </div>
@@ -27,6 +27,8 @@
                     <th class="text-center">Năm sinh</th>
                     <th class="text-center">Địa chỉ</th>
                     <th class="text-center">Số điện thoại</th>
+                    <th class="text-center">Sửa</th>
+                    <th class="text-center">Xóa</th>
                 </tr>
                 </thead>
                 @if (count($khachs) > 0)
@@ -67,9 +69,9 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Không
+                                                            data-bs-dismiss="modal">Cancel
                                                     </button>
-                                                    <input type="submit" class="btn btn-danger" value="Có   "/>
+                                                    <input type="submit" class="btn btn-danger" value="Delete"/>
                                                 </div>
                                             </div>
                                         </div>

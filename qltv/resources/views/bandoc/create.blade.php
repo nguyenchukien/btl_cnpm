@@ -25,7 +25,7 @@
     @endif
 
     <div class="card">
-        <div class="card-header">Add Product</div>
+        <div class="card-header">Thêm bạn đọc</div>
         <div class="card-body">
             <form method="post" action="{{ route('khachs.store') }}">
                 @csrf

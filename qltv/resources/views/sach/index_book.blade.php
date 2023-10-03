@@ -21,6 +21,7 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
+                        <th class="text-center">ID sách</th>
                         <th class="text-center">Tên sách</th>
                         <th class="text-center">Tên tác giả</th>
                         <th class="text-center">Thể loại</th>
@@ -32,6 +33,7 @@
                     @foreach ($sachs as $sach)
                         <tbody>
                             <tr>
+                                <td class="text-center">{{ $sach->id_sach }}</td>
                                 <td class="text-center">{{ $sach->ten_sach }}</td>
                                 <td class="text-center">{{ $sach->ten_tacgia }}</td>
                                 <td class="text-center">{{ $sach->the_loai }}</td>

@@ -17,6 +17,12 @@
             @csrf
             @method('PUT')
             <div class="row mb-3">
+                <label class="col-sm-2 col-label-form">ID sách</label>
+                <div class="col-sm-10">
+                    <input disabled  type="text" name="ten_sach" class="form-control" value="{{ $sach->id_sach }} "/>
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label class="col-sm-2 col-label-form">Tên sách</label>
                 <div class="col-sm-10">
                     <input type="text" name="ten_sach" class="form-control" value="{{ $sach->ten_sach }}"/>

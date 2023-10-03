@@ -91,7 +91,7 @@ class KhachController extends Controller
         $khach->diachi = $request->input('diachi');
         $khach->sdt = $request->input('sdt');
         $khach->save();
-        return redirect()->route('khachs.index')->with('success', 'Thông tin bạn đoc được sửa thành công');
+        return redirect()->route('khachs.index')->with('success', 'Thông tin bạn đọc được sửa thành công');
 
     }
 

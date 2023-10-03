@@ -11,7 +11,7 @@
     @endif
 
     <div class="card">
-        <div class="card-header">Edit Plane</div>
+        <div class="card-header">Sửa thông tin bạn đọc</div>
         <div class="card-body">
             <form method="post" action="{{ route('khachs.update', $khach->id_khach) }}">
                 @csrf
