@@ -9,14 +9,14 @@
 
         </div>
         <div class="card-body">
-            <form action="index.php?controller=Member&action=login" method="post">
+            <form id="form_login"  method="post">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="txtUser" ><i class="fas fa-user"></i></span>
-                    <input type="text" class="form-control" placeholder="username" name ="txtUser" >
+                    <input id="username" type="text" class="form-control" placeholder="username" name ="txtUser" >
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="txtPass" ><i class="fas fa-key"></i></span>
-                    <input type="password" class="form-control" placeholder="password" name ="txtPass">
+                    <input id="password" type="password" class="form-control" placeholder="password" name ="txtPass">
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Login" class="btn float-end login_btn" name ="btnLogin">
@@ -34,5 +34,5 @@
         </div>
     </div>
 </div>
-
+<script src="../js/main.js"></script>
 @endsection('content')

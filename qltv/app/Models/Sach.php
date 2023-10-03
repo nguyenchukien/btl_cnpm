@@ -9,5 +9,5 @@ class Sach extends Model
 {
     protected $primaryKey = 'id_sach';
     public $timestamps = false;
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 }

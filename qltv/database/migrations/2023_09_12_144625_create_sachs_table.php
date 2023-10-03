@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('saches', function (Blueprint $table) {
-            $table->increments('id_sach');
-            $table->string('ten_sach',); 
-            $table->string('ten_tacgia'); 
-            $table->string('the_loai'); 
-            
+            $table->id('id_sach');
+            $table->string('ten_sach',);
+            $table->string('ten_tacgia');
+            $table->string('the_loai');
     });
     }
-    
+
     /**
      * Reverse the migrations.
      */
