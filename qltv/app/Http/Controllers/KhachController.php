@@ -31,15 +31,6 @@ class KhachController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'id' => 'required',
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
-
 
         $khach = new Khach();
         $khach->id_khach = $request->input('id');

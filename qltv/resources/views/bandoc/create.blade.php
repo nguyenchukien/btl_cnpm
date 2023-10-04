@@ -1,4 +1,6 @@
-@extends('bandoc.master')
+@extends('layouts.master')
+
+@section('title', 'Quản lý bạn đọc')
 
 @section('content')
 
@@ -27,7 +29,7 @@
     <div class="card">
         <div class="card-header">Thêm bạn đọc</div>
         <div class="card-body">
-            <form method="post" action="{{ route('khachs.store') }}">
+            <form method="post" action="{{ route('bandocs.store') }}">
                 @csrf
 
                 <div class="row mb-3">
@@ -62,7 +64,7 @@
                 </div>
                 <div class="text-center">
                     <input type="submit" class="btn btn-success" value="Add"/>
-                    <a href="{{ route('khachs.index') }}" class="btn btn-danger">Back</a>
+                    <a href="{{ route('bandocs.index') }}" class="btn btn-danger">Back</a>
                 </div>
             </form>
         </div>

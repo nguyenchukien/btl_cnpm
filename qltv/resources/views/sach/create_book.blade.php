@@ -1,4 +1,6 @@
-@extends('sach.master_book')
+@extends('layouts.master')
+
+@section('title', 'Quản lý sách')
 
 @section('content')
 

@@ -1,4 +1,6 @@
-@extends('bandoc.master')
+@extends('layouts.master')
+
+@section('title', 'Quản lý bạn đọc')
 
 @section('content')
 
@@ -13,7 +15,7 @@
             <div class="row">
                 <div class="col col-md-6"><b>Thông tin bạn đọc</b></div>
                 <div class="col col-md-6">
-                    <a href="{{ route('khachs.create') }}" class="btn btn-success btn-sm float-end">Thêm</a>
+                    <a href="{{ route('bandocs.create') }}" class="btn btn-success btn-sm float-end">Thêm</a>
                 </div>
             </div>
         </div>
@@ -21,7 +23,7 @@
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="text-center">ID</th>
+
                     <th class="text-center">Họ tên</th>
                     <th class="text-center">Giới tính</th>
                     <th class="text-center">Năm sinh</th>
@@ -31,31 +33,31 @@
                     <th class="text-center">Xóa</th>
                 </tr>
                 </thead>
-                @if (count($khachs) > 0)
-                    @foreach ($khachs as $khach)
+                @if (count($bandocs) > 0)
+                    @foreach ($bandocs as $bandoc)
                         <tbody>
                         <tr>
-                            <td>{{ $khach->id_khach }}</td>
-                            <td>{{ $khach->ten_khach }}</td>
-                            <td>{{ $khach->gioi_tinh }}</td>
-                            <td>{{ $khach->namsinh}}</td>
-                            <td>{{ $khach->diachi }}</td>
-                            <td>{{ $khach->sdt }}</td>
+
+                            <td>{{ $bandoc->tenban_doc }}</td>
+                            <td>{{ $bandoc->gioi_tinh }}</td>
+                            <td>{{ $bandoc->nam_sinh}}</td>
+                            <td>{{ $bandoc->dia_chi }}</td>
+                            <td>{{ $bandoc->sdt }}</td>
                             <td>
-                                <a href="{{ route('khachs.edit', $khach->id_khach) }}"
+                                <a href="{{ route('bandocs.edit', $bandoc->id) }}"
                                    class="btn btn-warning btn-sm d-flex justify-content-center">Sửa</a>
                             </td>
                             <td>
-                                <form method="post" action="{{ route('khachs.destroy', $khach->id_khach) }}"
+                                <form method="post" action="{{ route('bandocs.destroy', $bandoc->id) }}"
                                       class="d-flex justify-content-center">
                                     @csrf
                                     @method('DELETE')
                                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                            data-bs-target="#confirmDelete-{{ $khach->id_khach }}">
+                                            data-bs-target="#confirmDelete-{{ $bandoc->id }}">
                                         Xóa
                                     </button>
                                     <!-- Modal -->
-                                    <div class="modal fade" id="confirmDelete-{{ $khach->id_khach }}" tabindex="-1"
+                                    <div class="modal fade" id="confirmDelete-{{ $bandoc->id }}" tabindex="-1"
                                          aria-labelledby="confirmDeleteLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered text-center">
                                             <div class="modal-content">
@@ -88,7 +90,7 @@
                     </tr>
                 @endif
             </table>
-            {!! $khachs->render('pagination::bootstrap-5') !!}
+            {!! $bandocs->render('pagination::bootstrap-5') !!}
         </div>
     </div>
 

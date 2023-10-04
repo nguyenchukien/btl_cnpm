@@ -22,7 +22,7 @@
                         <span><i class="fab fa-facebook-square"></i></span>
                         <span><i class="fab fa-google-plus-square"></i></span>
                         <span><i class="fab fa-twitter-square"></i></span>
-            </div>            
+            </div>
         </div>
         <div class="card-body">
             <form action="index.php?controller=Member&action=login" method="post">
@@ -37,7 +37,7 @@
                     <div class="row align-items-center remember">
                         <input type="checkbox">Remember Me </a>
                     </div>
-                
+
                 <div class="form-group">
                     <input type="submit" value="Login" class="btn float-end login_btn" name ="btnLogin">
                 </div>
@@ -45,15 +45,15 @@
         </div>
         <div class="card-footer">
             <div class="d-flex justify-content-center ">
-                Don't have an account?<a href="#" class="text-warning text-decoration-none text-sign-up"> Sign Up</a>
+                Don't have an account? <a href="#" class="text-warning text-decoration-none text-sign-up"> Sign Up</a>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="#" class="text-warning text-decoration-none">Forgot your password?</a>
             </div>
-            
+
         </div>
     </div>
 </div>
-    
+
 </body>
 </html>

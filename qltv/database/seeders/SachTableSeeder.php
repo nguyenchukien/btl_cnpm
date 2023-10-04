@@ -22,6 +22,7 @@ class SachTableSeeder extends Seeder
                 'ten_sach' => $faker->sentence(3, true),
                 'ten_tacgia' => $faker->sentence(3, true),
                 'the_loai' => $faker->sentence(3,true),
+                'id_thuthu' => $faker->numberBetween(01, 03),
             ]);
         }
     }

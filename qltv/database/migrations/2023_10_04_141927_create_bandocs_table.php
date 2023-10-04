@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('khaches', function (Blueprint $table) {
-            $table->id('id_khach');
-            $table->string('ten_khach');
+        Schema::create('bandocs', function (Blueprint $table) {
+            $table->id();
+            $table->string('tenban_doc');
             $table->string('gioi_tinh',10);
-            $table->string('namsinh',5);
-            $table->text('diachi');
+            $table->string('nam_sinh',5);
+            $table->text('dia_chi');
             $table->string('sdt',12);
+            $table->unsignedBigInteger('id_thuthu');
+            $table->foreign('id_thuthu')->references('id')->on('thuthus')->onDelete('cascade');
+
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('khaches');
+        Schema::dropIfExists('bandocs');
     }
 };

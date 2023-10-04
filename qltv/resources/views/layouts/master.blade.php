@@ -21,7 +21,7 @@
             </button>
             <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" aria-current="page" href="{{ route('khachs.index') }}">Quản lý bạn đọc </a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('bandocs.index') }}">Quản lý bạn đọc </a>
                     <a class="nav-link" href="{{ route('sachs.index') }}">Quản lý sách</a>
                     <a class="btn btn-outline-primary" href="{{ route('login') }}" role="button">Đăng xuất</a>
                 </div>
@@ -32,7 +32,7 @@
 </div>
     <div class="container mt-5">
 
-        <h1 class="text-primary mt-3 mb-4 text-center"><b>Quản lý bạn đọc</b></h1>
+        <h1 class="text-primary mt-3 mb-4 text-center"><b>@yield('title')</b></h1>
 
         @yield('content')
 

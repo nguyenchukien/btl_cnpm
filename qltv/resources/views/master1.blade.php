@@ -15,27 +15,27 @@
 </head>
 
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 bg-white rounded">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form method="post" action="#" class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm sách"
-                           aria-label="Search" name="nameSong">
-                    <button class="btn btn-outline-success" type="submit" name="search">Tìm</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-</header>
-<div class="container mt-5 mb-5">
+{{--<header>--}}
+{{--    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 bg-white rounded">--}}
+{{--        <div class="container-fluid">--}}
+{{--            <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
+{{--                <form method="post" action="#" class="d-flex" role="search">--}}
+{{--                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm sách"--}}
+{{--                           aria-label="Search" name="nameSong">--}}
+{{--                    <button class="btn btn-outline-success" type="submit" name="search">Tìm</button>--}}
+{{--                </form>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </nav>--}}
+{{--</header>--}}
+<div class="container d-flex vh-100">
 
     @yield('content')
 
 </div>
 </body>
 
-<footer class="bg-white d-flex justify-content-center align-items-center border-top border-secondary  border-2"
+<footer class="bg-white d-flex justify-content-center align-items-center border-top border-secondary border-2 fixed-bottom"
         style="height:80px">
     <h4 class="text-center text-uppercase fw-bold">thư viện nhà mình</h4>
 </footer>

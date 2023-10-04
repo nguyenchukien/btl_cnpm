@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('ten_sach',);
             $table->string('ten_tacgia');
             $table->string('the_loai');
-    });
+            $table->unsignedBigInteger('id_thuthu');
+            $table->foreign('id_thuthu')->references('id')->on('thuthus')->onDelete('cascade');
+
+        });
     }
 
     /**
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('saches');
+        Schema::dropIfExists('sachs');
     }
 };

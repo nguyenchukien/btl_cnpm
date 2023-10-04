@@ -29,8 +29,6 @@ class HomeController extends Controller
             return redirect()->route("sachs.index");
         }
         return redirect()->route("login");
-
-
     }
 
 }

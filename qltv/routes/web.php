@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SachController;
-use App\Http\Controllers\KhachController;
+use App\Http\Controllers\BandocController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +23,5 @@ Route::post('login', [HomeController::class,'authLogin'])->name('auth.login');  
 Route::middleware("auth")->prefix("admins")->group(function () {
     Route::resource('sachs',SachController::class);
 
-    Route::resource('khachs', KhachController::class);
+    Route::resource('bandocs', BandocController::class);
 });
